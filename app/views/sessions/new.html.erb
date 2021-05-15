@@ -6,6 +6,10 @@
     <%= f.text_field :email, class: 'form-control mb-3' %>
     <%= f.label :password, 'Password', class: 'form-label' %>
     <%= f.password_field :password, class: 'form-control mb-3' %>
+    <div class="form-check">
+      <%= f.label :remember_me, 'Remember me', class: 'form-check-label' %>
+      <%= f.check_box :remember_me, { :class => 'form-check-input mb-3' }, true , false %> 
+    </div>
     <%= f.submit 'Login', class: 'btn btn-primary' %>
     <% end %>
   </div>
