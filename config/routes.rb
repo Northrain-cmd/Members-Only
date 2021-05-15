@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy', as: 'logout'
   resources :users
   resources :sessions
+  resources :password_resets
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
