@@ -1,2 +1,21 @@
-<h1>PasswordResets#edit</h1>
-<p>Find me in app/views/password_resets/edit.html.erb</p>
+<div class="container">
+  <h1 class='text-center'>Reset Password</h1>
+  <div class="col-4 mx-auto">
+    <% if @user.errors.full_messages.any? %>
+      <div class='alert alert-danger'>
+        <% @user.errors.full_messages.each do |message| %>
+          <li class='alert alert-danger p-0 border-0 my-0'><%= message %></li>
+        <% end %>
+      </div>
+    <% end %>
+    <%= form_with url: password_reset_path(params[:id]), class: 'd-flex flex-column' do |f| %>
+        <%= f.label :password, 'New password', class: 'form-label' %>
+        <%= f.password_field :password, class: 'form-control mb-3' %>
+        <%= f.label :password_confirmation, 'Confirm password', class: 'form-label' %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <%= f.submit 'Update password', class: 'btn btn-success mt-3' %>
+    <% end %>
+  </div>
+
+</div>
+
