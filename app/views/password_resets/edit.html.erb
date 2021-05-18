@@ -8,7 +8,7 @@
         <% end %>
       </div>
     <% end %>
-    <%= form_with url: password_reset_path(params[:id]), class: 'd-flex flex-column' do |f| %>
+    <%= form_with model: @user, url: password_reset_path(params[:id]), class: 'd-flex flex-column' do |f| %>
         <%= f.label :password, 'New password', class: 'form-label' %>
         <%= f.password_field :password, class: 'form-control mb-3' %>
         <%= f.label :password_confirmation, 'Confirm password', class: 'form-label' %>
