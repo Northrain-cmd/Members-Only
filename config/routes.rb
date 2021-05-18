@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+  resources :posts
   root to: 'users#new'
   get 'sessions/new'
   get 'signup', to: 'users#new', as: 'signup'
