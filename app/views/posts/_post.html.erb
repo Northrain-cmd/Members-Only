@@ -1,0 +1,14 @@
+<div class="card" style="">
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Created by <%= post.user.username %></h6>
+    <p class="card-text"><%= post.body %></p>
+    <% if edit_rights?(post) %>
+      <div class="controls d-flex justify-content-around">
+        <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-success'  %>
+        <%= link_to 'Delete', post_path(post), method: :delete, class: 'btn btn-danger', 
+                                                data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+  </div>
+</div>
