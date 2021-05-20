@@ -1,0 +1,5 @@
+<%= form_with model: [post, post.comments.build], class: 'd-flex flex-column' do |f| %>
+  <%= f.label :body, 'Add a comment:', class: 'form-label mt-3' %>
+  <%= f.text_area :body, size: '60x8', class: 'form-control' %>
+  <%= f.submit class: 'btn btn-success mt-3' %>
+<% end %>

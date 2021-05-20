@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :comments
-  resources :posts
-  root to: 'users#new'
+  resources :posts do
+    resources :comments, shallow: true
+  end
+  root to: 'posts#index'
   get 'sessions/new'
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'

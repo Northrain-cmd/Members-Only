@@ -13,11 +13,12 @@
   <body>
     <div class="container-fluid">
       <nav class="nav py-2 justify-content-end bg-light">
+         <%= link_to 'MembersOnly', root_path, class: 'nav-link me-auto ms-5 h4'  %>
       <% if current_user %>
-         <%= link_to 'Logout', logout_path, method: :delete, class: 'btn btn-danger me-4'  %>
+         <%= link_to 'Logout', logout_path, method: :delete, class: 'btn btn-danger me-4 h-50'  %>
       <% else %>
-         <%= link_to 'Login', login_path, class: 'btn btn-primary'  %>
-         <%= link_to 'Signup', signup_path, class: 'btn btn-success mx-4'  %>
+         <%= link_to 'Login', login_path, class: 'btn btn-primary h-50'  %>
+         <%= link_to 'Signup', signup_path, class: 'btn btn-success mx-4 h-50'  %>
       <% end %>
       </nav>
       <div class="flash-messages">
