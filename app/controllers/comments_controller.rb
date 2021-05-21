@@ -8,9 +8,11 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_to post_path(@post), success: 'Comment added'
+      flash[:success] = 'Comment added!'
+      redirect_to post_path(@post)
     else
-      render :new, alert: 'There was an error creating the comment'
+      flash.now.alert = 'Error creating a comment'
+      render 'posts/show'
     end
   end
 

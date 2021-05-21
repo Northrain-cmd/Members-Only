@@ -1,0 +1,13 @@
+<div class="d-flex flex-column my-3" style='background-color: whitesmoke'>
+  <p class='text-primary ms-3'>
+    @<%= comment.user.username %>
+ </p>
+<p class='ms-3'>
+  <%= comment.body %>
+</p>
+<% if current_user == comment.user %>
+  <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, comment_path(comment),
+                      method: :delete, 
+                      class:'btn btn-danger text-decoration-none w-25 p-0 ms-auto' %>
+<% end %>
+</div>
